@@ -24,6 +24,8 @@ class Login extends React.Component{
             .post("", this.state.credentials) //ADD API URL
             .then(res => {
                 console.log({res})
+                //localStorage.setItem('token', JSON.stringify(//console log result)
+                //this.props.history.push("/homepage")
             })
             .catch(err => {
                 console.log({err})
