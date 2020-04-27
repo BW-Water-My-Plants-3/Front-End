@@ -6,6 +6,6 @@ export const axiosWithAuth = () => {
         headers: {
             'Authorization': `${token}`
         },
-        baseURL: "" //put API URL here!!
+        baseURL: "https://h2omyplants.herokuapp.com"
     })
 }

@@ -21,7 +21,7 @@ class Login extends React.Component{
     login = e => {
         e.preventDefault()
         axiosWithAuth()
-            .post("", this.state.credentials) //ADD API URL
+            .post("/api/login", this.state.credentials) //ADD API URL
             .then(res => {
                 console.log({res})
                 //localStorage.setItem('token', JSON.stringify(//console log result)
@@ -38,20 +38,20 @@ class Login extends React.Component{
             <h2>Welcome Back!</h2>
             <p>Log into your account</p>
             <div className="login-form">
-                <form /*add onSubmit*/> 
+                <form onSubmit={this.login}> 
                     <label htmlFor="username">Username: &nbsp;
                         <input 
                         id="username"
                         name="username"
                         value={this.state.username}
-                        onChange="" //add onChange event here
+                        onChange={this.handleChange}
                         /></label> &nbsp;
                     <label htmlFor="password">Password: &nbsp;
                         <input 
                         id="password"
                         name="password"
                         value={this.state.password}
-                        onChange="" //add onChange event here
+                        onChange={this.handleChange}
                         /></label>
                     <button>Log in</button>
                 </form>
