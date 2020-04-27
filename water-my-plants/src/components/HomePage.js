@@ -1,11 +1,20 @@
-import React from "react"
+import React, {useState} from "react"
+import {useHistory, Route} from "react-router-dom"
+
+//Componentes
+import AddPlantForm from "../components/AddPlantForm"
+import EditForm from "../components/EditForm"
 
 const HomePage = () => {
-
+    const [plantList, setPlantList] = useState()
+    const {push} = useHistory()
     return(
-        <div>
-            
-        </div>
+        <>
+            <Route path="/update-plant/:id" render={props => <EditForm {...props} plantList={plantList}/>} /> 
+            <Route path="/add-plant" component={AddPlantForm}/>
+            {/* add onClick function to go to Edit form */}
+            <button onClick={() => push("/add-plant")}>Add Plant</button>
+        </>
     )
 }
 
