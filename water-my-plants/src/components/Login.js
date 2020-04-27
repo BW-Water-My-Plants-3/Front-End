@@ -35,17 +35,18 @@ class Login extends React.Component{
     render(){
         return(
         <>
-            <h2>Log in</h2>
+            <h2>Welcome Back!</h2>
+            <p>Log into your account</p>
             <div className="login-form">
                 <form /*add onSubmit*/> 
-                    <label htmlFor="username">Username: 
+                    <label htmlFor="username">Username: &nbsp;
                         <input 
                         id="username"
                         name="username"
                         value={this.state.username}
                         onChange="" //add onChange event here
-                        /></label>
-                    <label htmlFor="password">Password: 
+                        /></label> &nbsp;
+                    <label htmlFor="password">Password: &nbsp;
                         <input 
                         id="password"
                         name="password"
