@@ -53,7 +53,7 @@ const EditForm = () => {
         <h2>Edit Profile</h2>
             <p>Fill out the updated information</p>
             <div className="form">
-                <form onSubmit={saveUser}> 
+                <form /*ADD ONSUBMIT SAVEUSER */> 
                     <label htmlFor="username">Username: &nbsp;
                         <input 
                         id="username"

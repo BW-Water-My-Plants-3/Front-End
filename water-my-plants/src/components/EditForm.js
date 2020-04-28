@@ -54,7 +54,7 @@ const EditForm = () => {
         <h2>Edit Plant</h2>
             <p>Fill out the updated information</p>
             <div className="form">
-                <form onSubmit={saveItem}> 
+                <form /*ADD ONSUBMIT SAVEITEM */> 
                     <label htmlFor="nickname">Nickname: &nbsp;
                         <input 
                         id="nickname"
