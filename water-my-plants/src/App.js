@@ -1,9 +1,10 @@
+
+
 import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import PrivateRoute from './components/PrivateRoute';
 import HomePage from "./components/HomePage"
 import Login from "./components/Login"
-
 function App() {
   return (
     <Router>
@@ -15,5 +16,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
