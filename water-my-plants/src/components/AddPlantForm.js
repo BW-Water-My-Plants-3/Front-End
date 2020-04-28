@@ -23,7 +23,7 @@ const AddPlantForm = () => {
         <>
         <h2>Add Plant</h2>
             <p>Fill out the updated information</p>
-            <div className="login-form">
+            <div className="form">
                 <form /*add onSubmit*/> 
                     <label htmlFor="nickname">Nickname: &nbsp;
                         <input 

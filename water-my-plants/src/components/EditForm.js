@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import {useParams, useHistory} from "react-router-dom"
 import axios from "axios"
+import { axiosWithAuth } from "../utils/axiosWithAuth"
 
 const initialPlant = {
     id: "",
@@ -9,52 +10,80 @@ const initialPlant = {
     h2oFrequency: "",
     imageURL: ""
 }
-//useEffect for initial load for plant data--GET
-
-//changeHandler
-
-//saveItem onSubmit-->PUT
-
 
 const EditForm = () => {
     const [plant, setPlant] = useState(initialPlant)
     // const {push} = useHistory()
 
+    //useEffect for initial load for plant data--GET
+    // useEffect(() => {
+    //     axiosWithAuth()
+    //         .get(``)
+    //         .then(res => {
+    //             console.log("GET RES", res)
+    //         })
+    //         .catch(err => {
+    //             console.log("GET ERR", err)
+    //         })
+    // })
+
+    //changeHandler
+    const changeHandler = e => {
+        e.persist()
+        setPlant({
+            ...plant,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    //saveItem onSubmit-->PUT
+    // const saveItem = e => {
+    //     e.preventDefault()
+    //     axiosWithAuth()
+    //         .put(`/api/`, plant) //WAITING FOR .PUT ENDPOINT FOR UPDATING PLANT
+    //         .then(res => {
+    //             console.log("UPDATE PLANT RES", res)
+    //         })
+    //         .catch(err => {
+    //             console.log("UPDATE PLANT ERR", err)
+    //         })
+    // }
+
     return(
         <>
         <h2>Edit Plant</h2>
             <p>Fill out the updated information</p>
-            <div className="login-form">
-                <form /*add onSubmit*/> 
+            <div className="form">
+                <form onSubmit={saveItem}> 
                     <label htmlFor="nickname">Nickname: &nbsp;
                         <input 
                         id="nickname"
                         name="nickname"
                         value={plant.nickname}
-                        onChange="" //add onChange event here
+                        onChange={changeHandler}
                         /></label> &nbsp;
                      <label htmlFor="species">Species: (optional) &nbsp;
                         <input 
                         id="species"
                         name="species"
                         value={plant.species}
-                        onChange="" //add onChange event here
+                        onChange={changeHandler}
                         /></label> &nbsp;
-                    <label htmlFor="h2oFrequency">
+                    <label htmlFor="h2oFrequency">Water Frequency: &nbsp;
                         <select id="h2oFrequency" name="h2oFrequency">
                             <option value="low" >Once a month</option>
                             <option value="medium" >Once a week</option>
                             <option value="medium-high" >Once a day</option>
                             <option value="high" >Twice a day</option>
                         </select>
-                        Water Frequency: &nbsp;</label>
-                    <label htmlFor="imageURL">
+                    </label> &nbsp;
+                    <label htmlFor="imageURL">Image URL: &nbsp;
                         <input 
                         type="string"
                         id="imageURL"
                         name="imageURL"
                         value={plant.imageURL}
-                        onChange="" //add onChange event here
+                        onChange={changeHandler}
                         /></label> &nbsp;
                     <button>Save</button>
                 </form>
