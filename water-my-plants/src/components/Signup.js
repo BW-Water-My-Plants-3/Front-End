@@ -12,7 +12,7 @@ userName:
     Yup
     .string()
     .required('Please enter your phone number')
-    .length(10,'Please enter a VALID phone number'),
+    .length(10,'Please enter a VALID phone number in the following format 1234567890'),
 
     password: 
     Yup

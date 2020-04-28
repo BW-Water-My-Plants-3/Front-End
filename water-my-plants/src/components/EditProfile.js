@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import {useParams, useHistory} from "react-router-dom"
 import axios from "axios"
-import { axiosWithAuth } from "../utils/axiosWithAuth"
+import { axiosWithAuth } from "../utils/axiosWithAuth.js"
 
 const initialUser = {
     id: "",
